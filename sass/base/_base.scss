@@ -9,6 +9,7 @@
 // font-size: global definition for 1 rem
 
 html {
+  box-sizing: border-box; /* borders & paddings no longer added to total width & height that we specify for a box */
   font-size: 62.5%; /* 1rem = 10px => so that users can dynamically change browser font size as well */
 
   @include respond(big-screens) {
@@ -29,8 +30,15 @@ html {
 }
 
 body {
-  box-sizing: border-box; /* borders & paddings no longer added to total width & height that we specify for a box */
-  padding: 2.4rem; /* even white space all around */
+  // padding: 2.4rem; /* even white space all around */
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 
   @include respond(tab-port) {
     padding: 0; // getting rid of white space around */

@@ -16,6 +16,8 @@ ORDER: Base + Typography > general layout + grid > pagelayout > components
   box-sizing: inherit; }
 
 html {
+  box-sizing: border-box;
+  /* borders & paddings no longer added to total width & height that we specify for a box */
   font-size: 62.5%;
   /* 1rem = 10px => so that users can dynamically change browser font size as well */ }
   @media (min-width: 112.5em) {
@@ -32,10 +34,10 @@ html {
       font-size: 37.5%; } }
 
 body {
-  box-sizing: border-box;
-  /* borders & paddings no longer added to total width & height that we specify for a box */
-  padding: 2.4rem;
-  /* even white space all around */ }
+  background-image: linear-gradient(to right bottom, rgba(255, 51, 102, 0.8), rgba(186, 38, 93, 0.8));
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
   @media (max-width: 56.25em) {
     body {
       padding: 0; } }
@@ -67,7 +69,7 @@ body {
     transform: translateX(0); } }
 
 body {
-  font-family: "Lato", "sans-serif";
+  font-family: "Open Sans", "sans-serif";
   /* properties related to font are inherited */
   font-weight: 400;
   font-size: 1.6rem;
