@@ -114,3 +114,29 @@ body {
   @media (max-width: 56.25em) {
     .u-margin-bottom-small {
       margin-bottom: 0.5rem !important; } }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: #f4f2f2;
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.8);
+  min-height: 50rem; }
+
+.content {
+  display: flex;
+  flex-direction: row; }
+
+.header {
+  height: 10rem;
+  background-color: #fff;
+  border-bottom: #f4f2f2; }
+
+.main {
+  background-color: #ff3366;
+  flex-grow: 1; }
+
+.sidebar-nav {
+  background-color: #333;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 20%; }
