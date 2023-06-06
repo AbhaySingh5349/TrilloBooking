@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// font-size: global definition for 1 rem
+
+html {
+  font-size: 62.5%; /* 1rem = 10px => so that users can dynamically change browser font size as well */
+
+  @include respond(big-screens) {
+    font-size: 75%; // 1rem = 12px (>1800px)
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px (<1200px)
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px (<900px)
+  }
+
+  @include respond(phone) {
+    font-size: 37.5%; // 1rem = 6px (<550px)
+  }
+}
+
+body {
+  box-sizing: border-box; /* borders & paddings no longer added to total width & height that we specify for a box */
+  padding: 2.4rem; /* even white space all around */
+
+  @include respond(tab-port) {
+    padding: 0; // getting rid of white space around */
+  }
+}
+
+::selection {
+  background-color: $color-primary; // setting color when block of text is selected on page
+  color: $color-white;
+}

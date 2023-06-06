@@ -1,0 +1,22 @@
+{
+  "name": "trillobooking",
+  "version": "1.0.0",
+  "description": "landing page for trillo",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhaySingh5349/TrilloBooking.git"
+  },
+  "author": "Abhay Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhaySingh5349/TrilloBooking/issues"
+  },
+  "homepage": "https://github.com/AbhaySingh5349/TrilloBooking#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
