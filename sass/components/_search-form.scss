@@ -1,0 +1,55 @@
+.search-form {
+  flex: 0 0 60%; // wrt parent (header)
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    font-family: inherit; // inherit from parent
+    font-size: inherit;
+    color: inherit;
+
+    background-color: $color-grey-light-2;
+    border: none;
+    border-radius: 150rem;
+    padding: 0.5rem 2rem;
+
+    // flex-grow: 1;
+    flex-basis: 80%;
+
+    transition: all 0.2s;
+    &:focus {
+      outline: none;
+      flex-basis: 100%;
+      background-color: $color-grey-light-3;
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: $color-grey-light-4;
+      font-size: inherit;
+    }
+  }
+
+  // adjecent sibling selector
+  &__input + &__btn {
+    background-color: $color-grey-light-3;
+  }
+
+  &__btn {
+    background-color: $color-grey-light-2;
+    border: none;
+    margin-left: -3.5rem; // btn will move on top of input
+
+    transition: all 0.5s;
+    @include btn_click_effect;
+  }
+
+  // modifying svg icon
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-grey-dark-3;
+  }
+}

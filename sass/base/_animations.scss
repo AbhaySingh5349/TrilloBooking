@@ -35,7 +35,7 @@
 @mixin btn_click_effect {
   &:hover {
     transform: translateY(-10%);
-    box-shadow: 0 0.8rem $default-font-size rgba($color-black, 0.2);
+    box-shadow: $light-shadow;
   }
 
   /* when we click element to give pressing effect*/

@@ -1,0 +1,66 @@
+.user-nav {
+  position: relative; // for positioning child element 'notification-count'
+
+  align-self: stretch; // over-riding parent(header) property of 'align-items:center'
+
+  display: flex;
+  flex-direction: row; // to bring icon-box & user-img in 1 row
+  justify-content: space-between;
+  align-items: center;
+
+  // select all child elements
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%; // so that background-color on hover stretches completely
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &__icon-box {
+    display: flex;
+    flex-direction: row; // to bring icon-box & user-img in 1 row
+    align-items: center;
+    &__icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: $color-grey-dark-2;
+    }
+
+    position: relative;
+
+    &__notification-count {
+      height: 1.75rem;
+      width: 1.75rem;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      background-color: $color-primary;
+      color: $color-white;
+
+      position: absolute;
+      top: 3rem;
+      left: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: row; // to bring icon-box & user-img in 1 row
+    align-items: center;
+    &-photo {
+      height: 3.75rem;
+      width: 3.75rem;
+      border-radius: 50%;
+    }
+
+    &-name {
+      margin-left: 0.5rem;
+    }
+  }
+}
