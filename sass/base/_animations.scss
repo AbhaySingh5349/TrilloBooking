@@ -47,7 +47,24 @@
 @mixin hover_scale_up_effect {
   &:hover {
     transform: translateY(-1rem) scale(1.05);
-    box-shadow: 0 1.6rem $default-font-size rgba($color-black, 0.5);
+    box-shadow: $medium-shadow;
     z-index: 1;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: $medium-shadow;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
   }
 }

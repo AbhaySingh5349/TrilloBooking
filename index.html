@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>trillo &mdash; Your all-in-one booking app</title>
@@ -91,7 +91,46 @@
 
           <div class="legal">&copy; 2017 by Trillo. All Rights Reserved.</div>
         </nav>
-        <main class="main">Hotel View</main>
+        <main class="hotel-view">
+          <div class="gallery">
+            <figure class="gallery__item">
+              <img src="img/hotel-1.jpg" alt="hotel 1" class="gallery__photo" />
+            </figure>
+            <figure class="gallery__item">
+              <img src="img/hotel-2.jpg" alt="hotel 2" class="gallery__photo" />
+            </figure>
+            <figure class="gallery__item">
+              <img src="img/hotel-3.jpg" alt="hotel 3" class="gallery__photo" />
+            </figure>
+          </div>
+          <div class="hotel-overview">
+            <h1 class="hotel-overview__heading-primary">Hotel Las Palmas</h1>
+            <div class="hotel-overview__stars">
+              <svg class="hotel-overview__icon hotel-overview__icon--stars">
+                <use xlink:href="img/sprite.svg#icon-star"></use>
+              </svg>
+              <svg class="hotel-overview__icon hotel-overview__icon--stars">
+                <use xlink:href="img/sprite.svg#icon-star"></use>
+              </svg>
+              <svg class="hotel-overview__icon hotel-overview__icon--stars">
+                <use xlink:href="img/sprite.svg#icon-star"></use>
+              </svg>
+              <svg class="hotel-overview__icon hotel-overview__icon--stars">
+                <use xlink:href="img/sprite.svg#icon-star"></use>
+              </svg>
+            </div>
+            <div class="hotel-overview__location">
+              <svg class="hotel-overview__icon hotel-overview__icon--location">
+                <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+              </svg>
+              <button class="btn-inline">Albufeira, Portugal</button>
+            </div>
+            <div class="hotel-overview__rating">
+              <div class="hotel-overview__rating--average">8.6</div>
+              <div class="hotel-overview__rating--count">320 Votes</div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   </body>

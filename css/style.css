@@ -68,6 +68,17 @@ body {
     opacity: 1;
     transform: translateX(0); } }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1.6rem 1.6rem rgba(0, 0, 0, 0.5); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
 body {
   font-family: "Open Sans", "sans-serif";
   /* properties related to font are inherited */
@@ -114,6 +125,66 @@ body {
   @media (max-width: 56.25em) {
     .u-margin-bottom-small {
       margin-bottom: 0.5rem !important; } }
+
+.btn-inline {
+  border: none;
+  color: #eb2f64;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  background-color: transparent;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  transform: all 0.2s; }
+  .btn-inline:hover {
+    color: #333;
+    animation: pulsate 1s infinite; }
+
+.gallery {
+  display: flex;
+  flex-direction: row; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
+
+.hotel-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #777; }
+  .hotel-overview__heading-primary {
+    font-size: 2.25rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem; }
+  .hotel-overview__stars {
+    margin-right: auto; }
+  .hotel-overview__location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+  .hotel-overview__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: #eb2f64; }
+    .hotel-overview__icon--location {
+      margin-right: 0.5rem; }
+  .hotel-overview__rating {
+    margin-left: 0.5rem;
+    color: #fff;
+    background-color: #eb2f64;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem; }
+    .hotel-overview__rating--average {
+      font-size: 1.4rem; }
+    .hotel-overview__rating--count {
+      font-size: 1rem; }
 
 .logo {
   height: 3.25rem;
@@ -273,19 +344,19 @@ body {
 .header {
   height: 10rem;
   background-color: #fff;
-  border-bottom: #f4f2f2;
+  border-bottom: 1px solid #777;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
 
-.main {
-  background-color: #ff3366;
+.hotel-view {
+  background-color: #fff;
   height: 60rem;
   flex-grow: 1; }
 
 .sidebar-nav {
   background-color: #333;
   flex-grow: 0;
-  flex-shrink: 1;
+  flex-shrink: 0;
   flex-basis: 20%; }
