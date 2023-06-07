@@ -1,0 +1,81 @@
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-list {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 2.5rem;
+
+  // line which will show up on hover
+  &__item::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; // to occupy same height as list item
+    width: 0.3rem;
+    background-color: $color-primary;
+
+    // to have an effect where line expands from origin to gain height (expansion effect on hover)
+    transform: scaleY(0);
+    transform-origin: center;
+
+    // .2s for height expansion, .2s delay in width expansion where transition is slow initially & then fasts
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1); // (expansion effect on hover)
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: $color-primary-light;
+  }
+
+  &__item {
+    position: relative; // so that 'item::before' is positioned relative to __item
+
+    &:not(last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: $color-grey-light-1;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1rem 3rem;
+
+    display: flex;
+    align-items: center;
+
+    flex-grow: 1;
+
+    // for link to be on top of ::before pseudo element
+    position: relative;
+    z-index: 10;
+  }
+
+  &__icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: currentColor; // color same as of parent
+    margin-right: 2rem;
+  }
+}
+
+.legal {
+  font-size: 1.2rem;
+  text-align: center;
+  color: $color-grey-dark-3;
+  padding: 2.5rem;
+}

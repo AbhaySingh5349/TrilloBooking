@@ -1,5 +1,6 @@
 .main {
   background-color: $color-primary-light;
 
+  height: 60rem;
   flex-grow: 1; // since we have specified width for side bar, so hotel view can occupy as much space left
 }
