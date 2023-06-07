@@ -1,0 +1,64 @@
+.hotel-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid $color-grey-dark-3;
+
+  &__heading-primary {
+    font-size: 2.25rem;
+    color: $color-grey-light-4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    // flex-grow: 1; // pushing stars to left & location to right
+    margin-right: auto; // unlike flex-grow, here we occupy space as much we need
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $color-primary;
+
+    &--stars {
+    }
+
+    &--location {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__rating {
+    margin-left: 0.5rem;
+    color: $color-white;
+    background-color: $color-primary;
+
+    align-self: stretch; // to stretch complete height of parent
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 1rem;
+
+    &--average {
+      font-size: 1.4rem;
+    }
+
+    &--count {
+      font-size: 1rem;
+    }
+  }
+}

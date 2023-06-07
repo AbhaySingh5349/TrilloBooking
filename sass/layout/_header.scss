@@ -1,7 +1,8 @@
 .header {
   height: 10rem;
   background-color: $color-white;
-  border-bottom: $color-grey-light-2;
+
+  border-bottom: 1px solid $color-grey-dark-3;
 
   display: flex;
   flex-direction: row; // to bring logo, search-form & user-nav in 1 row

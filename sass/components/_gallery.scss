@@ -1,0 +1,13 @@
+.gallery {
+  // to display images in a row
+  display: flex;
+  flex-direction: row;
+
+  &__item {
+  }
+
+  &__photo {
+    width: 100%;
+    display: block; // as inline-block has extra white space at bottom
+  }
+}
