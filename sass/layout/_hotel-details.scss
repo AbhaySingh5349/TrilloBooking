@@ -1,0 +1,10 @@
+.details {
+  display: flex;
+  flex-direction: row; // description and reviews will be side-by-side
+
+  padding: 2rem;
+
+  background-color: $color-grey-light-1;
+
+  border-bottom: $section-border;
+}

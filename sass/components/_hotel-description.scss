@@ -1,0 +1,86 @@
+.description {
+  background-color: $color-white;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 60%;
+
+  margin-right: 2rem; // space between description & reviews
+
+  box-shadow: $light-shadow;
+
+  font-size: 1.4rem;
+
+  padding: 2rem;
+}
+
+.paragraph {
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+.list {
+  list-style: none; // removes bullet-points
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: $thin-line;
+  border-bottom: $thin-line;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; // allowing items to be in multiple rows
+
+  &__item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%; // 2 elements side-by-side
+
+    margin-bottom: 0.5rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.5rem;
+
+      // old browsers
+      /*  background-image: url("../img/chevron-thin-right.svg");
+      background-size: cover; // even if icon is larger than 1 rem, it will resize itself */
+
+      // masks (as we cannot change bg color for img using 'background-image' property)
+      background-color: $color-primary-light;
+      -webkit-mask-image: url("../img/chevron-thin-right.svg"); // putting mask on positions where icon is present, then we will be able to look through mask and see bg color
+      -webkit-mask-size: cover; // even if icon is larger than 1 rem, it will resize itself
+    }
+  }
+}
+
+.recommend {
+  font-size: 1.3rem;
+  color: $color-grey-dark-3;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  &__count {
+  }
+
+  &__friends {
+  }
+
+  &__photo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+
+    box-sizing: content-box; // as we want border to add up to current height & width
+    border: 0.2rem solid $color-white;
+
+    &:not(:last-child) {
+      margin-right: -1rem; // to make images overlapping a little
+    }
+  }
+}
