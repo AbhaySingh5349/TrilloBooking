@@ -9,7 +9,7 @@
 // font-size: global definition for 1 rem
 
 html {
-  box-sizing: border-box; /* borders & paddings no longer added to total width & height that we specify for a box */
+  box-sizing: border-box; /* includes borders & paddings in specified height, width */
   font-size: 62.5%; /* 1rem = 10px => so that users can dynamically change browser font size as well */
 
   @include respond(big-screens) {

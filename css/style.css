@@ -17,7 +17,7 @@ ORDER: Base + Typography > general layout + grid > pagelayout > components
 
 html {
   box-sizing: border-box;
-  /* borders & paddings no longer added to total width & height that we specify for a box */
+  /* includes borders & paddings in specified height, width */
   font-size: 62.5%;
   /* 1rem = 10px => so that users can dynamically change browser font size as well */ }
   @media (min-width: 112.5em) {
@@ -74,7 +74,7 @@ body {
     box-shadow: none; }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 1.6rem 1.6rem rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.5); }
   100% {
     transform: scale(1);
     box-shadow: none; } }
@@ -146,32 +146,87 @@ body {
     width: 100%;
     display: block; }
 
-.hotel-overview {
+.description {
+  background-color: #fff;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 60%;
+  margin-right: 2rem;
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+  font-size: 1.4rem;
+  padding: 2rem; }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 1rem; }
+
+.list {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .list__item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    margin-bottom: 0.5rem; }
+    .list__item::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.5rem;
+      /*  background-image: url("../img/chevron-thin-right.svg");
+      background-size: cover; // even if icon is larger than 1 rem, it will resize itself */
+      background-color: #ff3366;
+      -webkit-mask-image: url("../img/chevron-thin-right.svg");
+      -webkit-mask-size: cover; }
+
+.recommend {
+  font-size: 1.3rem;
+  color: #777;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+  .recommend__photo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 0.2rem solid #fff; }
+    .recommend__photo:not(:last-child) {
+      margin-right: -1rem; }
+
+.overview {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #777; }
-  .hotel-overview__heading-primary {
+  .overview__heading-primary {
     font-size: 2.25rem;
     color: #ccc;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem; }
-  .hotel-overview__stars {
+  .overview__stars {
     margin-right: auto; }
-  .hotel-overview__location {
+  .overview__location {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; }
-  .hotel-overview__icon {
+  .overview__icon {
     height: 2.5rem;
     width: 2.5rem;
     fill: #eb2f64; }
-    .hotel-overview__icon--location {
+    .overview__icon--location {
       margin-right: 0.5rem; }
-  .hotel-overview__rating {
+  .overview__rating {
     margin-left: 0.5rem;
     color: #fff;
     background-color: #eb2f64;
@@ -181,9 +236,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0 1rem; }
-    .hotel-overview__rating--average {
+    .overview__rating--average {
       font-size: 1.4rem; }
-    .hotel-overview__rating--count {
+    .overview__rating--count {
       font-size: 1rem; }
 
 .logo {
@@ -262,7 +317,7 @@ body {
     .sidebar-list__item:not(last-child) {
       margin-bottom: 0.5rem; }
   .sidebar-list__link:link, .sidebar-list__link:visited {
-    color: #f7f7f7;
+    color: #faf9f9;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
@@ -330,6 +385,10 @@ body {
     .user-nav__user-name {
       margin-left: 0.5rem; }
 
+.user-reviews {
+  background-color: yellowgreen;
+  flex: 1; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -352,8 +411,14 @@ body {
 
 .hotel-view {
   background-color: #fff;
-  height: 60rem;
   flex-grow: 1; }
+
+.details {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  background-color: #faf9f9;
+  border-bottom: 1px solid #777; }
 
 .sidebar-nav {
   background-color: #333;

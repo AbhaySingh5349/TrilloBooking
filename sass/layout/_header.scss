@@ -2,7 +2,7 @@
   height: 10rem;
   background-color: $color-white;
 
-  border-bottom: 1px solid $color-grey-dark-3;
+  border-bottom: $section-border;
 
   display: flex;
   flex-direction: row; // to bring logo, search-form & user-nav in 1 row
