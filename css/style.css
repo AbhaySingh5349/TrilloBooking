@@ -146,6 +146,48 @@ body {
     .btn-inline--movement:hover span {
       margin-left: 0.8rem; }
 
+.cta__btn {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10rem;
+  background-image: linear-gradient(to right, #ff3366, #ba265d);
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; }
+  .cta__btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s; }
+  .cta__btn--normal-state {
+    padding: 2rem 5rem; }
+  .cta__btn--hover-state {
+    padding: 2rem 0rem;
+    position: absolute;
+    top: -100%;
+    left: 0; }
+  .cta__btn:hover {
+    background-image: linear-gradient(to left, #ff3366, #ba265d); }
+  .cta__btn:focus {
+    animation: pulsate 1s infinite; }
+  .cta__btn:hover .cta__btn--normal-state {
+    transform: translateY(100%); }
+  .cta__btn:hover .cta__btn--hover-state {
+    top: 0; }
+
+.cta {
+  text-align: center;
+  padding: 1.5rem 3rem; }
+  .cta__secondary-heading {
+    font-size: 1.5rem;
+    color: #ff3366;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem; }
+
 .gallery {
   display: flex;
   flex-direction: row; }
