@@ -32,3 +32,68 @@
     }
   }
 }
+
+.cta__btn {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 10rem;
+
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  color: $color-white;
+
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden; // since in '--normal-state' , the '--hover-state' text is outside, so we don't want to see that initially
+
+  // select all child elements
+  & > * {
+    display: inline-block; // so that we can using properties like 'padding, margin'
+
+    // to get height-width of parent
+    height: 100%;
+    width: 100%;
+
+    transition: all 0.2s;
+  }
+
+  &--normal-state {
+    padding: 2rem 5rem;
+  }
+
+  &--hover-state {
+    padding: 2rem 0rem;
+
+    position: absolute; // so that we can put it outside btn
+    top: -100%; // move up exactly the size of element
+    left: 0;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
+
+  &:focus {
+    animation: pulsate 1s infinite;
+  }
+
+  &:hover &--normal-state {
+    transform: translateY(100%); // move down by 100% of its height
+  }
+
+  &:hover &--hover-state {
+    top: 0;
+  }
+}
