@@ -10,8 +10,25 @@
   cursor: pointer;
   transform: all 0.2s;
 
-  &:hover {
-    color: $color-grey-dark-1;
-    animation: pulsate 1s infinite;
+  &--pulsate {
+    &:hover {
+      color: $color-grey-dark-1;
+      animation: pulsate 1s infinite;
+    }
+  }
+
+  & span {
+    margin-left: 0.3rem;
+    transition: all 0.3s;
+  }
+
+  &--movement {
+    &:hover {
+      color: $color-grey-dark-1;
+
+      span {
+        margin-left: 0.8rem;
+      }
+    }
   }
 }
