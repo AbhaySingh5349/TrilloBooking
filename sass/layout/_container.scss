@@ -1,8 +1,12 @@
 .container {
-  max-width: 120rem; // so that cntainer can decrease if not enough space to display our 120rem
+  max-width: 120rem; // so that container can decrease if not enough space to display our 120rem
   margin: 8rem auto; // centering the container wrt parent (body in this case)
   background-color: $color-grey-light-2;
   box-shadow: $dark-shadow;
 
   min-height: 50rem;
+
+  @include respond(tab-port) {
+    margin: auto;
+  }
 }
