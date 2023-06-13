@@ -8,4 +8,10 @@
   flex-direction: row; // to bring logo, search-form & user-nav in 1 row
   justify-content: space-between;
   align-items: center;
+
+  @include respond(phone) {
+    align-content: space-around; // spacing for multiple flex rows
+    flex-wrap: wrap; // arrange items in multiple rows
+    height: 12rem;
+  }
 }

@@ -10,8 +10,12 @@
 .review {
   background-color: $color-white;
   box-shadow: $light-shadow;
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0.5rem;
+  }
 
   position: relative;
 
@@ -40,8 +44,6 @@
     flex-direction: row;
     align-items: center;
 
-    &-box {
-    }
     &-name {
       font-size: 1.2rem;
       color: rgba($color-black, 0.8);

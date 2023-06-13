@@ -11,6 +11,16 @@
   font-size: 1.4rem;
 
   padding: 2rem;
+
+  @include respond(tab-port) {
+    padding: 1rem;
+  }
+
+  @include respond(phone) {
+    margin-right: 0;
+    margin-bottom: $margin-bottom-small;
+    padding: 0;
+  }
 }
 
 .paragraph {
@@ -25,6 +35,10 @@
   padding: 2rem 0;
   border-top: $thin-line;
   border-bottom: $thin-line;
+
+  @include respond(tab-port) {
+    padding: 1rem 0;
+  }
 
   display: flex;
   justify-content: center;
@@ -65,10 +79,13 @@
   justify-content: space-around;
   align-items: center;
 
-  &__count {
+  @include respond(phone) {
+    flex-direction: column;
   }
 
   &__friends {
+    display: flex; // to always keep photos together, side text will start appearing in multiple rows
+    flex-direction: row;
   }
 
   &__photo {

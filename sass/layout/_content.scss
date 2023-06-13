@@ -1,4 +1,8 @@
 .content {
   display: flex;
   flex-direction: row;
+
+  @include respond(tab-port) {
+    flex-direction: column; // bring side nav bar and hotel content vertically
+  }
 }

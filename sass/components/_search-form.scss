@@ -1,9 +1,16 @@
 .search-form {
-  flex: 0 0 60%; // wrt parent (header)
+  flex: 0 0 50%; // wrt parent (header)
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include respond(phone) {
+    flex: 0 0 90%; // wrt parent (header)
+    order: 1; // placing in end
+
+    align-self: center;
+  }
 
   &__input {
     font-family: inherit; // inherit from parent
